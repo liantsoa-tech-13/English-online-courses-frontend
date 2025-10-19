@@ -1,0 +1,58 @@
+.navbar {
+    display: flex;
+    margin-top: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 17px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h3 span {
+    color: rgb(146, 44, 255);
+}
+
+.logoImage {
+    width: 60px;
+    height: 60px;
+}
+
+.navLinks {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navLinks a:hover {
+    color: rgb(146, 44, 255);
+}
+
+.authButtons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: none;
+    border-radius: 10px;
+}
+
+.authButtons button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.login {
+    background-color: rgb(146, 44, 255);
+    border: 1px solid rgb(68, 4, 136);
+    color: white
+}
