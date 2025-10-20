@@ -5,7 +5,7 @@ const Sidebar: React.FC = () => {
     return (
         <div className={styles.sideBar}>
             <div className={styles.element} id={styles.logo}>
-                  <img className={styles.logoImage} src="Logo//Logo.png" alt="Logo" />
+                  <img className={styles.logoImage} src="Logo/Logo.png" alt="Logo" />
                   <h3> EOC<span>M</span></h3>
             </div>
 
@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
                   <p>Dashboard</p>
             </Link>
 
-            <Link href='/users' className={styles.element}>
+            <Link href='/admin-dashboard/users' className={styles.element}>
                   <img className={styles.elementImage} src="Icons/user.svg" alt="Logo" />
                   <p> Users </p>
             </Link>
