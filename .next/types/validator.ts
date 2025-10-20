@@ -36,6 +36,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 }
 
 
+// Validate ../../app/admin-dashboard/dashboard/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin-dashboard/dashboard">> = Specific
+  const handler = {} as typeof import("../../app/admin-dashboard/dashboard/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/admin-dashboard/users/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/admin-dashboard/users">> = Specific
@@ -59,6 +68,15 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
 
 
 
+
+// Validate ../../app/admin-dashboard/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/admin-dashboard">> = Specific
+  const handler = {} as typeof import("../../app/admin-dashboard/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
 
 // Validate ../../app/layout.tsx
 {

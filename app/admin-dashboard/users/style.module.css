@@ -9,11 +9,12 @@
 }
 
 .userContainer {
-    text-decoration: none;
-}
-
-.userContainer li{
-    margin-bottom: 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .userBox {
@@ -21,4 +22,10 @@
     width: 90%;
     font-size: 20px;
     padding: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.userBox:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
 }

@@ -1,0 +1,49 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/admin-dashboard/Sidebar.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.Sidebar_sideBar__HX5jR {
+    width: 170px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #C0C0C0;
+}
+
+.Sidebar_sideBar__HX5jR Link {
+    text-decoration: none;
+}
+
+.Sidebar_logoImage__CfhIp {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+#Sidebar_logo__lPIUC {
+    margin-bottom: 20px;
+}
+
+.Sidebar_element__fjnGR {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    text-decoration: none;
+}
+
+.Sidebar_element__fjnGR:hover {
+    background-color: #E0E0E0;
+    cursor: pointer;
+}
+
+.Sidebar_element__fjnGR p {
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+}
+
+.Sidebar_elementImage__Xj0I2 {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
