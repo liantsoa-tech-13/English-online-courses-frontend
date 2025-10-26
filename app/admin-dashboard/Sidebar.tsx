@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
                         <p> Users </p>
                   </Link>
 
-                  <Link href='/lessons' className={styles.element}>
+                  <Link href='/admin-dashboard/levels' className={styles.element}>
                         <img className={styles.elementImage} src="/Icons/lesson.svg" alt="Logo" />
                         <p> Lessons </p>
                   </Link>
