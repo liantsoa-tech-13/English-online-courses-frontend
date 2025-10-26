@@ -1,17 +1,18 @@
-import React from "react";
-import Sidebar from "./Sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "../components/app-sidebar"
 
-export default function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: "flex" }}>
-      <Sidebar />
-      <main style={{ flex: 1, padding: "1rem" }}>
-        {children}
-      </main>
-    </div>
-  );
+    <html>
+      <body>
+        <SidebarProvider>
+        <AppSidebar />
+        <main>
+          <SidebarTrigger />
+          {children}
+        </main>
+        </SidebarProvider>
+      </body>
+    </html>
+  )
 }
