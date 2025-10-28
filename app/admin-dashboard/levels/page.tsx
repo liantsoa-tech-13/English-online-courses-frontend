@@ -1,9 +1,9 @@
-import LevelsTable from "./components/LevelsTable"
+import Box from "./box";
 
-export default function Level(){
+export default function Page() {
     return (
         <>
-            <LevelsTable/>
+            <Box />
         </>
     )
 }
