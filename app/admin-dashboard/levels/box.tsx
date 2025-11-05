@@ -1,6 +1,7 @@
 "use client";
 
 import { Clock, Leaf } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export type Level = {
@@ -8,7 +9,7 @@ export type Level = {
   name: string;
   status: string;
   lessonCount: number;
-  updatedAt: string | null; // ✅ allow null
+  updatedAt: string | null; 
 };
 
 export default function Box() {
@@ -75,9 +76,11 @@ export default function Box() {
               <span>{level.lessonCount}</span>
             </div>
 
-            <button className="rounded-3xl mt-4 px-4 py-2 bg-black text-white hover:bg-gray-500 transition">
-              View Details
-            </button>
+            <Link href={`/admin-dashboard/level/${level.id}/lessons`}>
+              <button className="rounded-3xl mt-4 px-4 py-2 bg-black text-white hover:bg-gray-500 transition">
+                View Details
+              </button>
+            </Link>
           </div>
         </div>
       ))}
