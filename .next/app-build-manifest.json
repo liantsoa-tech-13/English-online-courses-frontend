@@ -6,6 +6,12 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
+    ],
     "/admin-dashboard/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -16,10 +22,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/admin-dashboard/users/page.js"
     ],
-    "/_not-found/page": [
+    "/admin-dashboard/levels/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/css/app/admin-dashboard/levels/layout.css",
+      "static/chunks/app/admin-dashboard/levels/layout.js"
+    ],
+    "/admin-dashboard/levels/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin-dashboard/levels/page.js"
+    ],
+    "/admin-dashboard/level/[id]/lessons/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin-dashboard/level/[id]/lessons/page.js"
     ]
   }
 }

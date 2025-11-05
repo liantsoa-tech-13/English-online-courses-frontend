@@ -1,4 +1,6 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/admin-dashboard/users/page": "app/admin-dashboard/users/page.js"
+  "/page": "app/page.js",
+  "/admin-dashboard/users/page": "app/admin-dashboard/users/page.js",
+  "/admin-dashboard/level/[id]/lessons/page": "app/admin-dashboard/level/[id]/lessons/page.js",
+  "/admin-dashboard/levels/page": "app/admin-dashboard/levels/page.js"
 }

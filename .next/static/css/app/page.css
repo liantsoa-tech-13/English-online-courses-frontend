@@ -1,0 +1,61 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./app/student/Navbar/Navbar.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.Navbar_navbar__BSmR0 {
+    display: flex;
+    margin-top: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 17px;
+}
+
+.Navbar_navbar__BSmR0 ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.Navbar_logo__DatJT {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Navbar_logo__DatJT h3 span {
+    color: rgb(146, 44, 255);
+}
+
+.Navbar_logoImage__ek_7r {
+    width: 60px;
+    height: 60px;
+}
+
+.Navbar_navLinks__uRc2O {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.Navbar_navLinks__uRc2O a:hover {
+    color: rgb(146, 44, 255);
+}
+
+.Navbar_authButtons__cOMRq button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: none;
+    border-radius: 10px;
+}
+
+.Navbar_authButtons__cOMRq button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.Navbar_login__GihDt {
+    background-color: rgb(146, 44, 255);
+    border: 1px solid rgb(68, 4, 136);
+    color: white
+}

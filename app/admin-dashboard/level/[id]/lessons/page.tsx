@@ -6,9 +6,9 @@ import { columns, Lesson } from "./columns";
 import { DataTable } from "./data-table";
 
 export default function LessonsPage() {
-  const params = useParams(); // Record<string, string | string[]> | null
+  const params = useParams(); 
   const rawId = params?.id;
-  const id = Array.isArray(rawId) ? rawId[0] : rawId; // normalized string | undefined
+  const id = Array.isArray(rawId) ? rawId[0] : rawId;
 
   const [data, setData] = useState<Lesson[]>([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ export default function LessonsPage() {
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
   useEffect(() => {
-    if (!id) return; // wait until id is available
+    if (!id) return; 
 
     const fetchLessons = async () => {
       try {

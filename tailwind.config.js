@@ -63,7 +63,12 @@ module.exports = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+			"custom-beige": {
+				light: "#fff0db",
+				DEFAULT: "#f5f5dc",
+				dark: "#e4d5b7"
+			}
   		}
   	}
   },
