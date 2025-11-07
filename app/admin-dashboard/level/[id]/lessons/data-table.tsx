@@ -4,6 +4,7 @@ import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
+  RowSelectionState,
   useReactTable,
 } from '@tanstack/react-table';
 import {
@@ -15,13 +16,16 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
+import { Dispatch, SetStateAction } from 'react';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   page: number;
   size: number; 
-  onPageChange: (newPage: number) => void; 
+  onPageChange: Dispatch<SetStateAction<number>>;
+  rowSelection?: RowSelectionState;
+  onRowSelectionChange?: Dispatch<SetStateAction<RowSelectionState>>;
 }
 
 export function DataTable<TData, TValue>({
@@ -30,12 +34,19 @@ export function DataTable<TData, TValue>({
   page,
   size,
   onPageChange,
+  rowSelection,
+  onRowSelectionChange
 }: DataTableProps<TData, TValue>) {
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-  });
+  
+const table = useReactTable<TData>({
+  data,
+  columns,
+  getCoreRowModel: getCoreRowModel(),
+  enableRowSelection: true,
+  state: { rowSelection },
+  onRowSelectionChange,
+});
+
 
   const handlePrev = () => {
     if (page > 1) onPageChange(page - 1);
