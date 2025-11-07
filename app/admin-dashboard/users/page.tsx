@@ -6,7 +6,7 @@ import { DataTable } from "./data-table";
 export default function UsersPage() {
   const [data, setData] = useState<User[]>([]);
   const [page, setPage] = useState(1);
-  const size = 2;
+  const size = 3;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

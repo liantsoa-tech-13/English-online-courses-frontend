@@ -15,6 +15,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -31,11 +32,19 @@ export function DataTable<TData, TValue>({
   size,
   onPageChange 
 }: DataTableProps<TData, TValue>) {
+  const [rowSelection, setRowSelection] = useState({});
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    enableRowSelection: true,
+    onRowSelectionChange: setRowSelection,
+    state: { rowSelection },
   });
+
+  // for the selected users
+  //const selectedUsers = table.getSelectedRowModel().rows.map(row => row.original);
 
   const handlePrev = () => {
     if (page > 1) onPageChange(page - 1);
