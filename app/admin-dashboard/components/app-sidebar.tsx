@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Book, Check, Home, Settings, Users, ChevronDown, ChevronRight } from "lucide-react"
-
 import {
   Sidebar,
   SidebarContent,
@@ -78,13 +77,13 @@ export function AppSidebar() {
                         className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-gray-100 text-gray-800 transition"
                       >
                         <div className="flex items-center space-x-3">
-                          <item.icon className="h-6 w-6 text-gray-500" />
-                          <h6 className="font-medium">{item.title}</h6>
+                          <item.icon className="h-5 w-5 text-gray-500 text-[16px]" />
+                          <h6 className="font-medium text-[16px]">{item.title}</h6>
                         </div>
                         {openMenus[item.title] ? (
-                          <ChevronDown className="h-6 w-6 text-gray-400" />
+                          <ChevronDown className="h-5 w-5 text-gray-400 text-[16px]" />
                         ) : (
-                          <ChevronRight className="h-6 w-6 text-gray-400" />
+                          <ChevronRight className="h-5 w-5 text-gray-400 text-[16px]" />
                         )}
                       </SidebarMenuButton>
 
@@ -94,7 +93,7 @@ export function AppSidebar() {
                             <a
                               key={sub.title}
                               href={sub.url}
-                              className="block px-2 py-1.5 rounded-md text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+                              className="block px-2 py-1.5 rounded-md text-[16px] text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
                             >
                               {sub.title}
                             </a>
@@ -105,8 +104,8 @@ export function AppSidebar() {
                   ) : (
                     <SidebarMenuButton asChild className="px-3 py-2 rounded-md hover:bg-gray-100 text-gray-800 transition">
                       <a href={item.url} className="flex items-center space-x-3">
-                        <item.icon className="h-6 w-6 text-gray-500" />
-                        <h6 className="font-medium">{item.title}</h6>
+                        <item.icon className="h-5 w-5 text-gray-500 text-[16px]" />
+                        <h6 className="font-medium text-[16px]">{item.title}</h6>
                       </a>
                     </SidebarMenuButton>
                   )}
