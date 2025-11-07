@@ -4,6 +4,7 @@ import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
+  RowSelectionState,
   useReactTable,
 } from "@tanstack/react-table";
 import {
@@ -15,7 +16,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -23,6 +24,8 @@ interface DataTableProps<TData, TValue> {
   page: number;
   size: number;
   onPageChange: (newPage: number) => void;
+  rowSelection?: RowSelectionState;
+  onRowSelectionChange?: Dispatch<SetStateAction<RowSelectionState>>;
 }
 
 export function DataTable<TData, TValue>({
@@ -30,17 +33,18 @@ export function DataTable<TData, TValue>({
   data,
   page,
   size,
-  onPageChange 
+  onPageChange,
+  rowSelection,
+  onRowSelectionChange
 }: DataTableProps<TData, TValue>) {
-  const [rowSelection, setRowSelection] = useState({});
 
-  const table = useReactTable({
+  const table = useReactTable<TData>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     enableRowSelection: true,
-    onRowSelectionChange: setRowSelection,
     state: { rowSelection },
+    onRowSelectionChange,
   });
 
   // for the selected users

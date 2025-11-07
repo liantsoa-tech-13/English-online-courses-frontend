@@ -9,6 +9,7 @@ export default function UsersPage() {
   const size = 3;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [rowSelection, setRowSelection] = useState({});
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
@@ -37,7 +38,7 @@ export default function UsersPage() {
 
   return (
     <div className="h-[300px] flex flex-col">
-      <DataTable columns={columns} data={data} page={page} size={size} onPageChange={setPage} />
+      <DataTable columns={columns} data={data} page={page} size={size} onPageChange={setPage} rowSelection={rowSelection} onRowSelectionChange={setRowSelection}/>
     </div>
   );
 }
