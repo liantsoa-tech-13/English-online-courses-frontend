@@ -1,81 +1,49 @@
 'use client';
-
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { columns, Lesson } from "./columns";
 import { DataTable } from "./data-table";
 
 export default function LessonsPage() {
-  const params = useParams(); 
-  const rawId = params?.id;
-  const id = Array.isArray(rawId) ? rawId[0] : rawId;
+  const params = useParams();
+  const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
 
   const [data, setData] = useState<Lesson[]>([]);
+  const [page, setPage] = useState(1);
+  const size = 3;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
   useEffect(() => {
-    if (!id) return; 
+    if (!id) return;
 
     const fetchLessons = async () => {
+      setLoading(true);
+      const url = `${API_URL}/level/${id}/lessons?page=${page}&size=${size}`;
+      console.log("Fetching:", url);
       try {
-        setLoading(true);
-        setError(null);
-
-        const url = `${API_URL}/level/${id}/lessons`;
-        console.log("Fetching lessons from:", url);
-
         const res = await fetch(url, { cache: "no-store" });
-
-        if (!res.ok) {
-          const text = await res.text();
-          throw new Error(`Fetch failed: ${res.status} - ${text}`);
-        }
-
+        if (!res.ok) throw new Error(`Failed: ${res.status}`);
         const json: Lesson[] = await res.json();
-        console.log("Fetched lessons:", json);
-
         setData(json);
       } catch (err) {
-        console.error("Fetch error:", err);
-        setError("No lessons found or an error occurred.");
+        setError(err instanceof Error ? err.message : "Unknown error");
       } finally {
         setLoading(false);
       }
     };
 
     fetchLessons();
-  }, [id, API_URL]);
+  }, [id, page, size, API_URL]);
 
-  if (loading) {
-    return (
-      <div className="container mx-auto py-10 text-center">
-        <p>Loading lessons...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="container mx-auto py-10 text-center text-red-500">
-        <p>{error}</p>
-      </div>
-    );
-  }
-
-  if (!data.length) {
-    return (
-      <div className="container mx-auto py-10 text-center">
-        <p>No lessons available for this level.</p>
-      </div>
-    );
-  }
+  if (loading) return <p>Loading lessons...</p>;
+  if (error) return <p className="text-red-500">{error}</p>;
 
   return (
-    <div className="container mx-auto py-10">
-      <DataTable columns={columns} data={data} />
+    <div className="h-[300px] flex flex-col">
+      <DataTable columns={columns} data={data} page={page} size={size} onPageChange={setPage} />
     </div>
   );
 }
